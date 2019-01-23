@@ -2,15 +2,14 @@ def balanced(s):
     x = 0
     y = 0
     for i in range(len(s)):
-
         if s[i] == 'x':
             x+=1
         if s[i] == 'y':
             y+=1
-
     if x == y:
         return True
     return False
+
 
 def balanced_bonus(s):
     letterDict = {}
@@ -20,12 +19,12 @@ def balanced_bonus(s):
         if letterDict.get(s[i]) is None:
             letterDict[s[i]] = 1
         else:
-
             letterDict[s[i]] = letterDict.get(s[i]) + 1
     finalCounts = [letterDict.get(letter)for letter in letterDict.keys()]
     if len(set(finalCounts)) == 1:
         return True
     return False
+
 
 def main():
     print 'Test 1' , bool(balanced("xxxyyy") == True)
@@ -44,6 +43,7 @@ def main():
     print 'Bonus Test 7' , bool(balanced_bonus("www") == True)
     print 'Bonus Test 8' , bool(balanced_bonus("x") == True)
     print 'Bonus Test 9' , bool(balanced_bonus("") == True)
+
 
 if __name__ == '__main__':
     main()
